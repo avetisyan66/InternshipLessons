@@ -29,7 +29,9 @@ const getTodoOptions = (item) => {
     const res = await fetch(`${BASE_URL}todos`);
     todos = await res.json();
     console.log(todos)
-    todos.forEach((item) => {
+    
+    todos.forEach((item, index) => {
+        item.id = index;
         item.status ? completeUl.append(getTodoOptions(item)) : toDoUl.append(getTodoOptions(item));
     })
     
@@ -58,7 +60,8 @@ var addTask = function(){
     return;
     }
     try {
-        fetch(`${BASE_URL}toDos`, {method: "POST", body: JSON.stringify({title: newTask.value, 
+        fetch(`${BASE_URL}toDos`, {method: "POST", body: JSON.stringify({
+            title: newTask.value, 
             time: newTimeField.value,
             status: false }),
         headers: { "Content-Type": "application/json" }})
@@ -107,8 +110,8 @@ var bindCompleteItems = function(taskItem, deleteButtonPress){
 /* 
     console.log(taskItem)
     try {
-        fetch(`${BASE_URL}toDos`, {method: "PUT", body: JSON.stringify({
-            id: 2,
+        fetch(`${BASE_URL}toDos/`, {method: "PUT", body: JSON.stringify({
+            id: 1,
             title: todos[1].title, 
             time: newTimeField.value,
             status: true }),

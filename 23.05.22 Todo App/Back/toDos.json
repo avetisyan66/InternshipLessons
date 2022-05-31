@@ -5,13 +5,18 @@
     "status": false
   },
   {
-    "title": "Learn Node.js",
-    "time": "20:00",
+    "title": "Learn prisma",
+    "time": "00:00",
     "status": false
   },
   {
-    "title": "Learn prisma",
-    "time": "00:00",
+    "title": "Talk with Arevik",
+    "time": "18:37",
+    "status": false
+  },
+  {
+    "title": "Talk to Sashsa",
+    "time": "17:00",
     "status": false
   }
 ]
